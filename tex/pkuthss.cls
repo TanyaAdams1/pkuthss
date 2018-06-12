@@ -125,12 +125,13 @@
 	% footnote is rarely used in dissertation covers ;)
 	\renewcommand\thefootnote%
 		{\protect\thss@int@circled{\arabic{footnote}}}
+	% Reset the footnote number every page.
+	\RequirePackage[perpage]{footmisc}
 	% Provides utility to modify footnote spacing.
 	% Option used to make sure it does not render interleaf pages totally blank.
 	\RequirePackage[cleardoublepage = current]{scrextend}
-	% Set up footnote spacing: symbol indent 2 ccwd, paragraph indent 3.5 ccwd,
-	% 0.75 ccwd between symbol and paragraph.
-	\deffootnote{2\ccwd}{3.5\ccwd}{\thefootnotemark\hspace{0.75\ccwd}}
+	% Set up footnote spacing: whole paragraph indent 2 ccwd, 0.5 ccwd after mark.
+	\deffootnote{2\ccwd}{0pt}{\thefootnotemark\hspace{0.5\ccwd}}
 \fi
 
 \ifthss@opt@pkuspace
